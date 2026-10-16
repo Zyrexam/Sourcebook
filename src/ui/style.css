@@ -3,3 +3,56 @@
 /* Source selection and a readable, keyboard-accessible document reader. */
 .scope-hint{font-size:12px;color:var(--muted);line-height:1.5;margin:10px 0 6px}.scope-all{font-size:12px;border:0;background:none;color:#496b3b;padding:4px 0;cursor:pointer}.scope-all:disabled{opacity:.5;cursor:default}.document-select{accent-color:#587348;width:16px;height:16px;flex:0 0 16px}.document-open{background:none;border:0;padding:0;text-align:left;color:inherit;cursor:pointer;display:block}.document-open:hover{text-decoration:underline}.read-document{border:1px solid #cbd6c1;border-radius:6px;background:white;color:#48623c;font-size:12px;padding:7px 10px;margin-top:12px;cursor:pointer}
 #document-reader{width:min(840px,calc(100vw - 32px));max-height:88vh;border:1px solid #d5ddcb;border-radius:14px;padding:0;color:#283426;background:#fff;box-shadow:0 24px 90px #1f301b33}#document-reader::backdrop{background:#18281577}.reader-header{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid #e1e6db;gap:16px}.reader-header small{font-size:11px;color:#78876c;letter-spacing:.12em}.reader-header h2{font-size:20px;margin-top:7px;overflow-wrap:anywhere}.reader-header button{border:0;background:#f0f3eb;border-radius:8px;font-size:26px;width:38px;height:38px;cursor:pointer;flex:0 0 38px}#reader-passages{max-height:60vh;overflow:auto;padding:8px 26px}.reader-passage{padding:16px 12px;border-bottom:1px solid #e9ede4;scroll-margin:16px}.reader-passage.highlighted{background:#f0f5e8;border-left:3px solid #719155}.reader-passage small{font-size:12px;color:#67785b}.reader-passage pre{font:15px/1.8 ui-sans-serif,system-ui,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;margin:12px 0}.reader-navigation{display:flex;align-items:center;justify-content:space-between;margin:0;padding:16px 26px;border-top:1px solid #e1e6db;font-size:12px}.reader-navigation button{background:#eff3e9;border:1px solid #d8e0ce;border-radius:6px;padding:8px;cursor:pointer}.reader-navigation button:disabled{opacity:.4;cursor:default}#reader-message{padding:0 26px;font-size:14px;color:#93453d}button:focus-visible,input:focus-visible{outline:2px solid #6c8c55;outline-offset:3px}@media(max-width:760px){.scope-hint{margin-top:8px}.reader-header{padding:16px}.reader-navigation{padding:12px;gap:8px}#reader-passages{padding:4px 12px}.reader-navigation button{font-size:12px}.reader-header h2{font-size:17px}}
+
+/* ---------------------------------------------------------------------------
+   Theme: cool glass. Layered translucent surfaces over a soft gradient base,
+   one deep-teal accent, colour kept on meaning rather than decoration. The
+   editorial serif headings are deliberate and stay.
+   --------------------------------------------------------------------------- */
+:root{
+  --bg:#eef2f8;
+  --paper:rgba(255,255,255,.72);
+  --ink:#16202c;
+  --muted:#647086;
+  --line:rgba(22,32,44,.10);
+  --green:#0f766e;
+  --pale:rgba(15,118,110,.12);
+  --glass:rgba(255,255,255,.62);
+  --glass-line:rgba(255,255,255,.8);
+  --shadow:0 14px 38px rgba(18,32,52,.10);
+}
+body{
+  background:
+    radial-gradient(1200px 620px at 2% -16%,rgba(15,118,110,.22),transparent 58%),
+    radial-gradient(1000px 620px at 104% 0%,rgba(45,212,191,.18),transparent 56%),
+    radial-gradient(900px 700px at 55% 118%,rgba(15,118,110,.12),transparent 60%),
+    linear-gradient(165deg,#eef2f8,#dbe2ec);
+  background-attachment:fixed;
+}
+.sidebar{background:var(--glass);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);border-right:1px solid var(--glass-line)}
+.topbar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%)}
+.workspace,.status-pill,.composer,.answer-card,.source-card,.feature-icon,.upload-area,.document-icon{background:var(--glass);border-color:var(--glass-line);box-shadow:inset 0 1px 0 rgba(255,255,255,.65);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}
+.composer,.answer-card{box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.6)}
+.composer:focus-within{border-color:rgba(15,118,110,.45);box-shadow:0 0 0 4px rgba(15,118,110,.14),var(--shadow)}
+.workspace-icon,.count,.nav-item.active,.citation-link,.feature-icon,.document-icon,.read-document,.reader-navigation button,.reader-header button{background:var(--pale);color:var(--green);border-color:transparent}
+.nav-item.active{color:#0b4f4a}
+.tiny-mark,.scope-all,.text-button{color:var(--green)}
+.composer button{background:linear-gradient(160deg,#149186,#0f6f68);color:#f3fbfa;box-shadow:0 10px 24px rgba(15,118,110,.30)}
+.composer button:hover{filter:brightness(1.06)}
+.suggestions button{background:var(--glass);border-color:var(--glass-line);color:var(--muted);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.suggestions button:hover{background:rgba(255,255,255,.85);color:var(--green)}
+.upload-area{border-color:rgba(15,118,110,.30)}
+.upload-area:hover{background:rgba(255,255,255,.85)}
+.live-dot{background:#12a594}
+#notice{color:var(--green)}
+#document-reader{color:var(--ink);background:rgba(255,255,255,.84);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-color:var(--glass-line);box-shadow:0 30px 90px rgba(14,28,48,.28)}
+#document-reader::backdrop{background:rgba(13,21,32,.42);backdrop-filter:blur(3px)}
+.reader-header,.reader-navigation,.reader-passage{border-color:var(--line)}
+.reader-passage.highlighted{background:rgba(15,118,110,.10);border-left:3px solid var(--green)}
+.source-card:target{outline:2px solid rgba(15,118,110,.55)}
+h1>span{color:#8593a0}
+.topbar strong{color:var(--ink)}
+.slash{color:rgba(22,32,44,.28)}
+.nav-label,.nav-key,.topbar,.eyebrow,.intro,.composer-bottom>span,.suggestions>span,.scope-hint,.status-pill,.empty-library,.sidebar-bottom,.sidebar-bottom small,.sidebar-bottom a,.answer-heading span,.evidence-heading span,.answer-note,.source-card small,.source-card details,.feature-grid p,.welcome-top>span:last-child,footer,.reader-header small,.reader-passage small{color:var(--muted)}
+button:focus-visible,a:focus-visible,textarea:focus-visible,label:focus-within{outline:3px solid rgba(15,118,110,.45);outline-offset:3px}
+button:focus-visible,input:focus-visible{outline:2px solid rgba(15,118,110,.55)}
