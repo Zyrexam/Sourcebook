@@ -15,13 +15,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-semantic = ["sentence-transformers>=5,<6"]
+semantic = ["sentence-transformers>=5,<7"]
 
 [dependency-groups]
 browser = [
     "playwright>=1.55,<2",
 ]
-dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "ruff>=0.12,<1", "mypy>=1.15,<2"]
+dev = ["pytest>=8,<10", "pytest-cov>=6,<8", "ruff>=0.12,<1", "mypy>=1.15,<3"]
 
 [project.scripts]
 sourcebook = "sourcebook.cli:main"
