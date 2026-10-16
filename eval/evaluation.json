@@ -1,0 +1,144 @@
+{
+  "scope": "Bundled deterministic fixture; not a general RAG benchmark or semantic faithfulness measurement.",
+  "mode": "extractive / BM25",
+  "cases": 10,
+  "dataset_sha256": "c7f8c715df56494dddfd8ba68003042bcf71556c2e98e8fa5f3cc132ad6257e9",
+  "corpus_sha256": {
+    "field-notes.md": "b564e83278e1980405a37a50a25c92f684495e518643a0092b3b8d88d07de888",
+    "retrieval-guide.md": "39a14238959c0eed868a8fc283eb7839e217d4a7bbdca63a4d2478c0b70c016b",
+    "workspace-guide.md": "526469a5203f877cbcce7eb5058dd767e13ef47688ec728bfd6667b933520647"
+  },
+  "document_recall_at_5": 1.0,
+  "document_mrr_at_5": 1.0,
+  "passage_anchor_recall_at_5": null,
+  "unanswerable_abstention_rate": 1,
+  "exact_citation_validity": 1,
+  "results": [
+    {
+      "question": "How does incremental indexing detect unchanged documents?",
+      "retrieved": [
+        "field-notes.md",
+        "workspace-guide.md",
+        "retrieval-guide.md"
+      ],
+      "expected": [
+        "field-notes.md"
+      ],
+      "status": "answered",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 20.54
+    },
+    {
+      "question": "What is reciprocal rank fusion used for?",
+      "retrieved": [
+        "retrieval-guide.md",
+        "workspace-guide.md",
+        "field-notes.md"
+      ],
+      "expected": [
+        "retrieval-guide.md"
+      ],
+      "status": "answered",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 21.04
+    },
+    {
+      "question": "Which evaluation metrics does the notebook describe?",
+      "retrieved": [
+        "retrieval-guide.md"
+      ],
+      "expected": [
+        "retrieval-guide.md"
+      ],
+      "status": "answered",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 19.4
+    },
+    {
+      "question": "What happens when a citation quote is invalid?",
+      "retrieved": [
+        "field-notes.md",
+        "workspace-guide.md",
+        "retrieval-guide.md"
+      ],
+      "expected": [
+        "field-notes.md"
+      ],
+      "status": "answered",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 19.21
+    },
+    {
+      "question": "What is the upload limit?",
+      "retrieved": [
+        "field-notes.md"
+      ],
+      "expected": [
+        "field-notes.md"
+      ],
+      "status": "answered",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 18.98
+    },
+    {
+      "question": "Does choosing a remote provider send retrieved passages?",
+      "retrieved": [
+        "retrieval-guide.md",
+        "workspace-guide.md",
+        "field-notes.md"
+      ],
+      "expected": [
+        "retrieval-guide.md"
+      ],
+      "status": "answered",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 19.8
+    },
+    {
+      "question": "What does the source reader highlight?",
+      "retrieved": [
+        "workspace-guide.md"
+      ],
+      "expected": [
+        "workspace-guide.md"
+      ],
+      "status": "answered",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 19.39
+    },
+    {
+      "question": "What is the capital of Namibia?",
+      "retrieved": [],
+      "expected": [],
+      "status": "abstained",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 18.6
+    },
+    {
+      "question": "Who won the Wimbledon final?",
+      "retrieved": [],
+      "expected": [],
+      "status": "abstained",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 18.37
+    },
+    {
+      "question": "Quantum chromodynamics coupling constant?",
+      "retrieved": [],
+      "expected": [],
+      "status": "abstained",
+      "search_documents": null,
+      "passage_anchor_recall_at_5": null,
+      "elapsed_ms": 18.14
+    }
+  ]
+}
