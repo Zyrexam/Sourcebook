@@ -23,3 +23,7 @@ artifacts/
 # here: the architecture reference is ARCHITECTURE.md, the screenshots are in
 # assets/, and the committed evaluation results are in eval/.
 docs/
+
+# Local model experiments: benchmark harness, downloaded GGUFs, Modelfiles and
+# results. Kept on disk for inspection, never shipped.
+experiments/

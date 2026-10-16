@@ -21,6 +21,7 @@ src/ui: HTML / CSS / JavaScript
                  └ compatible Chat Completions API
                           │
                  structured claims + evidence
+                  (model writes the quote, or selects a span)
                           │
                  exact quote / source validation
 ```
@@ -78,12 +79,14 @@ it is an engineering default, not a validated relevance threshold for arbitrary 
 
 ## Answers and caches
 
-Providers return structured claims and evidence. Every evidence entry must point to
-a retrieved chunk and quote a nonempty exact substring. Any invalid entry withholds
-the complete generated draft. An empty draft or empty retrieval result abstains.
-Semantic entailment requires separate evaluation and human review. Offline mode
-returns the most query-relevant paragraph from each of the top three passages as
-verbatim excerpts rather than generated interpretations.
+Providers return structured claims and evidence. Either the model writes each quotation, or with
+`SOURCEBOOK_ANSWER_STYLE=span` it selects a sentence number and the application writes the
+quotation from retrieved source text, so a quotation cannot be a paraphrase and a claim cannot
+contain words the source lacks. Every evidence entry must point to a retrieved chunk and quote a
+nonempty exact substring. Any invalid entry withholds the complete generated draft. An empty
+draft or empty retrieval result abstains. Semantic entailment requires separate evaluation and
+human review. Offline mode returns the most query-relevant paragraph from each of the top three
+passages as verbatim excerpts rather than generated interpretations.
 
 Cache keys include question, retrieval configuration, provider/model identity, prompt
 version and the document fingerprints. Mutations clear stored answers. The cache is

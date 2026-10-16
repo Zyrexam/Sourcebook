@@ -31,6 +31,8 @@ there is no frontend build step or mandatory cloud service.
 - **Evidence-linked answers:** page/section/character provenance, exact quote validation,
   and withheld answers when generated evidence fails validation.
 - **Provider choice:** offline source excerpts, Ollama, or a Chat Completions-compatible endpoint.
+  A generated answer either quotes directly or selects a retrieved sentence for the application to
+  quote.
 - **Practical UI:** select which documents a question may use, open citations in a paginated
   source reader, upload a collection, try example questions, and remove files.
   Responsive layout, keyboard submission, visible progress, and useful error states.
@@ -93,6 +95,13 @@ export SOURCEBOOK_MODEL=your-model-id
 export SOURCEBOOK_API_KEY=your-key
 uv run sourcebook serve
 ```
+
+**Quoted or selected.** By default the model writes each quotation. Set
+`SOURCEBOOK_ANSWER_STYLE=span` with either provider and the model instead returns sentence
+numbers; the application writes the claim and its quotation from the retrieved text. A
+quotation then cannot be a paraphrase, and a generated statement cannot contain words the
+source does not have. The price is fluency: answers become the source's own sentences. The
+offline default is the simplest form of the same idea.
 
 Remote generation sends the question and retrieved passages to the configured provider.
 Credentials stay on the server. Source identifiers and quotations are validated before
