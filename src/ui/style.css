@@ -5,54 +5,102 @@
 #document-reader{width:min(840px,calc(100vw - 32px));max-height:88vh;border:1px solid #d5ddcb;border-radius:14px;padding:0;color:#283426;background:#fff;box-shadow:0 24px 90px #1f301b33}#document-reader::backdrop{background:#18281577}.reader-header{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid #e1e6db;gap:16px}.reader-header small{font-size:11px;color:#78876c;letter-spacing:.12em}.reader-header h2{font-size:20px;margin-top:7px;overflow-wrap:anywhere}.reader-header button{border:0;background:#f0f3eb;border-radius:8px;font-size:26px;width:38px;height:38px;cursor:pointer;flex:0 0 38px}#reader-passages{max-height:60vh;overflow:auto;padding:8px 26px}.reader-passage{padding:16px 12px;border-bottom:1px solid #e9ede4;scroll-margin:16px}.reader-passage.highlighted{background:#f0f5e8;border-left:3px solid #719155}.reader-passage small{font-size:12px;color:#67785b}.reader-passage pre{font:15px/1.8 ui-sans-serif,system-ui,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere;margin:12px 0}.reader-navigation{display:flex;align-items:center;justify-content:space-between;margin:0;padding:16px 26px;border-top:1px solid #e1e6db;font-size:12px}.reader-navigation button{background:#eff3e9;border:1px solid #d8e0ce;border-radius:6px;padding:8px;cursor:pointer}.reader-navigation button:disabled{opacity:.4;cursor:default}#reader-message{padding:0 26px;font-size:14px;color:#93453d}button:focus-visible,input:focus-visible{outline:2px solid #6c8c55;outline-offset:3px}@media(max-width:760px){.scope-hint{margin-top:8px}.reader-header{padding:16px}.reader-navigation{padding:12px;gap:8px}#reader-passages{padding:4px 12px}.reader-navigation button{font-size:12px}.reader-header h2{font-size:17px}}
 
 /* ---------------------------------------------------------------------------
-   Theme: cool glass. Layered translucent surfaces over a soft gradient base,
-   one deep-teal accent, colour kept on meaning rather than decoration. The
-   editorial serif headings are deliberate and stay.
+   Theme: dark glass. Graphite base with a teal glow, frosted dark surfaces and
+   one bright accent. The editorial serif headings are deliberate and stay.
    --------------------------------------------------------------------------- */
 :root{
-  --bg:#eef2f8;
-  --paper:rgba(255,255,255,.72);
-  --ink:#16202c;
-  --muted:#647086;
-  --line:rgba(22,32,44,.10);
-  --green:#0f766e;
-  --pale:rgba(15,118,110,.12);
-  --glass:rgba(255,255,255,.62);
-  --glass-line:rgba(255,255,255,.8);
-  --shadow:0 14px 38px rgba(18,32,52,.10);
+  --bg:#0a1119;
+  --paper:rgba(255,255,255,.06);
+  --ink:#e6edf6;
+  --muted:#93a1b5;
+  --line:rgba(255,255,255,.10);
+  --green:#2dd4bf;
+  --pale:rgba(45,212,191,.14);
+  --glass:rgba(255,255,255,.05);
+  --glass-line:rgba(255,255,255,.10);
+  --shadow:0 18px 44px rgba(0,0,0,.45);
 }
 body{
   background:
-    radial-gradient(1200px 620px at 2% -16%,rgba(15,118,110,.22),transparent 58%),
-    radial-gradient(1000px 620px at 104% 0%,rgba(45,212,191,.18),transparent 56%),
-    radial-gradient(900px 700px at 55% 118%,rgba(15,118,110,.12),transparent 60%),
-    linear-gradient(165deg,#eef2f8,#dbe2ec);
+    radial-gradient(1200px 620px at 2% -16%,rgba(45,212,191,.16),transparent 58%),
+    radial-gradient(1000px 620px at 104% 0%,rgba(20,120,140,.22),transparent 56%),
+    radial-gradient(900px 700px at 55% 118%,rgba(45,212,191,.10),transparent 60%),
+    linear-gradient(165deg,#0d1622,#0a1119);
   background-attachment:fixed;
 }
-.sidebar{background:var(--glass);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);border-right:1px solid var(--glass-line)}
-.topbar{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.62);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%)}
-.workspace,.status-pill,.composer,.answer-card,.source-card,.feature-icon,.upload-area,.document-icon{background:var(--glass);border-color:var(--glass-line);box-shadow:inset 0 1px 0 rgba(255,255,255,.65);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}
-.composer,.answer-card{box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.6)}
-.composer:focus-within{border-color:rgba(15,118,110,.45);box-shadow:0 0 0 4px rgba(15,118,110,.14),var(--shadow)}
-.workspace-icon,.count,.nav-item.active,.citation-link,.feature-icon,.document-icon,.read-document,.reader-navigation button,.reader-header button{background:var(--pale);color:var(--green);border-color:transparent}
-.nav-item.active{color:#0b4f4a}
-.tiny-mark,.scope-all,.text-button{color:var(--green)}
-.composer button{background:linear-gradient(160deg,#149186,#0f6f68);color:#f3fbfa;box-shadow:0 10px 24px rgba(15,118,110,.30)}
-.composer button:hover{filter:brightness(1.06)}
-.suggestions button{background:var(--glass);border-color:var(--glass-line);color:var(--muted);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.suggestions button:hover{background:rgba(255,255,255,.85);color:var(--green)}
-.upload-area{border-color:rgba(15,118,110,.30)}
-.upload-area:hover{background:rgba(255,255,255,.85)}
-.live-dot{background:#12a594}
-#notice{color:var(--green)}
-#document-reader{color:var(--ink);background:rgba(255,255,255,.84);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-color:var(--glass-line);box-shadow:0 30px 90px rgba(14,28,48,.28)}
-#document-reader::backdrop{background:rgba(13,21,32,.42);backdrop-filter:blur(3px)}
-.reader-header,.reader-navigation,.reader-passage{border-color:var(--line)}
-.reader-passage.highlighted{background:rgba(15,118,110,.10);border-left:3px solid var(--green)}
-.source-card:target{outline:2px solid rgba(15,118,110,.55)}
-h1>span{color:#8593a0}
+.sidebar{background:rgba(255,255,255,.045);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);border-right:1px solid rgba(255,255,255,.08)}
+.topbar{position:sticky;top:0;z-index:5;background:rgba(13,22,34,.55);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.workspace,.status-pill,.composer,.answer-card,.source-card,.feature-icon,.upload-area,.document-icon{background:var(--glass);border-color:var(--glass-line);box-shadow:inset 0 1px 0 rgba(255,255,255,.10);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.composer,.answer-card{box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.10)}
+.composer:focus-within{border-color:rgba(45,212,191,.5);box-shadow:0 0 0 4px rgba(45,212,191,.14),var(--shadow)}
+.workspace-icon,.count,.nav-item.active,.citation-link,.feature-icon,.document-icon,.read-document,.reader-navigation button,.reader-header button{background:var(--pale);color:#5eead4;border-color:transparent}
+.nav-item.active{color:#7ff0dd}
+.tiny-mark,.scope-all,.text-button{color:#5eead4}
+.composer button{background:linear-gradient(160deg,#2dd4bf,#0d9488);color:#04201c;box-shadow:0 10px 24px rgba(45,212,191,.28)}
+.composer button:hover{filter:brightness(1.08)}
+.suggestions button{background:var(--glass);border-color:rgba(255,255,255,.12);color:var(--muted);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.suggestions button:hover{background:rgba(255,255,255,.10);color:#5eead4}
+.upload-area{border-color:rgba(45,212,191,.35)}
+.upload-area:hover{background:rgba(255,255,255,.08)}
+.upload-symbol,.delete-doc{color:var(--muted)}
+.live-dot{background:#2dd4bf}
+#notice{color:#5eead4}
+#notice.error{color:#f8a38f}
+.document-select{accent-color:#2dd4bf}
+textarea::placeholder{color:rgba(230,237,246,.35)}
+#document-reader{color:var(--ink);background:rgba(17,26,38,.92);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border-color:rgba(255,255,255,.12);box-shadow:0 30px 90px rgba(0,0,0,.6)}
+#document-reader::backdrop{background:rgba(3,7,12,.65);backdrop-filter:blur(3px)}
+.reader-header,.reader-navigation,.reader-passage{border-color:rgba(255,255,255,.08)}
+.reader-passage.highlighted{background:rgba(45,212,191,.10);border-left:3px solid var(--green)}
+.source-card:target{outline:2px solid rgba(45,212,191,.6)}
+h1>span{color:#7f92a8}
 .topbar strong{color:var(--ink)}
-.slash{color:rgba(22,32,44,.28)}
+.slash{color:rgba(255,255,255,.25)}
 .nav-label,.nav-key,.topbar,.eyebrow,.intro,.composer-bottom>span,.suggestions>span,.scope-hint,.status-pill,.empty-library,.sidebar-bottom,.sidebar-bottom small,.sidebar-bottom a,.answer-heading span,.evidence-heading span,.answer-note,.source-card small,.source-card details,.feature-grid p,.welcome-top>span:last-child,footer,.reader-header small,.reader-passage small{color:var(--muted)}
-button:focus-visible,a:focus-visible,textarea:focus-visible,label:focus-within{outline:3px solid rgba(15,118,110,.45);outline-offset:3px}
-button:focus-visible,input:focus-visible{outline:2px solid rgba(15,118,110,.55)}
+button:focus-visible,a:focus-visible,textarea:focus-visible,label:focus-within{outline:3px solid rgba(45,212,191,.5);outline-offset:3px}
+button:focus-visible,input:focus-visible{outline:2px solid rgba(45,212,191,.55)}
+::selection{background:rgba(45,212,191,.28)}
+html{scrollbar-color:rgba(255,255,255,.18) transparent}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.16);border:2px solid transparent;border-radius:8px;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.3);background-clip:content-box}
+
+/* ---------------------------------------------------------------------------
+   Responsive. Below ~860px the sidebar becomes a slide-in drawer so the
+   composer owns the first screen; the feature grid collapses on phones.
+   --------------------------------------------------------------------------- */
+.nav-toggle{display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:40px;height:40px;padding:0;flex:0 0 40px;border:1px solid var(--glass-line);border-radius:10px;background:var(--glass);cursor:pointer}
+.nav-toggle span{display:block;width:16px;height:1.5px;border-radius:2px;background:var(--ink);transition:transform .2s ease,opacity .2s ease}
+.nav-scrim{display:none;position:fixed;inset:0;z-index:30;margin:0;padding:0;border:0;cursor:pointer;background:rgba(3,7,12,.6);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+body.nav-open{overflow:hidden}
+body.nav-open .nav-scrim{display:block}
+@media(max-width:860px){
+  body{display:block}
+  .topbar{justify-content:flex-start;gap:14px;height:64px;padding:0 16px}
+  .nav-toggle{display:flex;margin-right:auto}
+  .topbar>.status-pill{margin-left:auto}
+  .sidebar{position:fixed;inset:0 auto 0 0;height:100vh;width:min(84vw,304px);padding:22px 18px;overflow-y:auto;z-index:40;border-right:1px solid rgba(255,255,255,.10);background:rgba(12,20,31,.94);backdrop-filter:blur(26px) saturate(140%);-webkit-backdrop-filter:blur(26px) saturate(140%);box-shadow:0 0 70px rgba(0,0,0,.6);transform:translateX(-104%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+  body.nav-open .sidebar{transform:none}
+  .workspace,.nav-item{display:flex}
+  .nav-label,.sidebar-bottom{display:block}
+  .workspace{margin:22px 0 20px}
+  .nav-item{margin:10px -6px 22px}
+  .library-heading{margin:16px 0 12px}
+  .documents{max-height:none;overflow:visible}
+  .upload-area{padding:15px 6px;margin-top:12px}
+  .upload-symbol,.upload-area small{display:block}
+  .upload-area input{margin-top:10px}
+  .text-button{margin:14px 0 0;padding:8px 0}
+  .sidebar-bottom{margin-top:26px;padding-top:20px}
+  main{padding:34px 20px 24px}
+  h1{font-size:clamp(30px,8.4vw,40px);letter-spacing:-1.4px}
+  .intro{font-size:13px}
+  .desktop-break{display:none}
+}
+@media(max-width:640px){
+  .feature-grid{grid-template-columns:1fr;gap:22px;margin-top:22px}
+  footer{flex-direction:column;gap:8px}
+  main{padding:30px 18px 22px}
+}
+@media(prefers-reduced-motion:reduce){.sidebar{transition:none}.nav-toggle span{transition:none}}

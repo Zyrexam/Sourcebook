@@ -129,4 +129,19 @@ $('all-documents').addEventListener('click', () => task(async () => { selectedDo
 $('reader-close').addEventListener('click', () => $('document-reader').close());
 $('reader-previous').addEventListener('click', () => task(() => openReader(readerState.documentId, null, Math.max(0, readerState.offset - readerState.limit))));
 $('reader-next').addEventListener('click', () => task(() => openReader(readerState.documentId, null, readerState.offset + readerState.limit)));
+const drawerQuery = window.matchMedia('(max-width: 860px)');
+function setNav(open) {
+  document.body.classList.toggle('nav-open', open);
+  $('nav-toggle').setAttribute('aria-expanded', String(open));
+  $('nav-toggle').setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+}
+$('nav-toggle').addEventListener('click', () => setNav(!document.body.classList.contains('nav-open')));
+$('nav-scrim').addEventListener('click', () => setNav(false));
+for (const item of document.querySelectorAll('.nav-item')) item.addEventListener('click', () => setNav(false));
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape' || !document.body.classList.contains('nav-open')) return;
+  if ($('document-reader').open) return;
+  setNav(false); $('nav-toggle').focus();
+});
+drawerQuery.addEventListener('change', e => { if (!e.matches) setNav(false); });
 refresh().catch(error=>notice(error.message,true));

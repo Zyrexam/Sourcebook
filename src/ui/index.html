@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Sourcebook · Document workspace</title><link rel="icon" href="/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Sourcebook · Document workspace</title><link rel="icon" href="/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
 <body>
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
   <a class="brand" href="/"><img src="/mark.svg" alt="" width="34" height="34"> <span>Source<span class="brand-light">book</span><small>DOCUMENT WORKSPACE</small></span></a>
   <div class="workspace"><span class="workspace-icon">M</span><div>My knowledge<small>Personal workspace</small></div><span class="live-dot" title="Local workspace"></span></div>
   <div class="nav-label">WORKSPACE</div><a class="nav-item active" href="#main"><span>◈</span> Ask your documents <span class="nav-key">↵</span></a>
@@ -13,8 +13,9 @@
   <button class="text-button" id="demo-button">Try the example collection <span>↗</span></button>
   <div class="sidebar-bottom"><span class="live-dot"></span><span id="privacy-label">Local by default</span><small>Built around your sources.</small><a href="/docs" target="_blank" rel="noopener">API reference ↗</a></div>
 </aside>
+<button id="nav-scrim" class="nav-scrim" type="button" tabindex="-1" aria-hidden="true"></button>
 <div class="main-shell">
-<header class="topbar"><span>Workspace <span class="slash">/</span> <strong>Ask</strong></span><span class="status-pill"><span class="live-dot"></span><span id="mode-label">Connecting</span></span></header>
+<header class="topbar"><button id="nav-toggle" class="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open navigation"><span></span><span></span><span></span></button><span>Workspace <span class="slash">/</span> <strong>Ask</strong></span><span class="status-pill"><span class="live-dot"></span><span id="mode-label">Connecting</span></span></header>
 <main id="main">
   <div class="eyebrow"><span class="tiny-mark">✳</span> A LITTLE CLARITY, FROM YOUR DOCUMENTS</div>
   <h1>Your knowledge.<br><span>With the sources attached.</span></h1>

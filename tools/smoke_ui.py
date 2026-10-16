@@ -124,10 +124,27 @@ def main():
                         "document.querySelector('dialog').scrollWidth <= innerWidth"
                     )
                     page.locator("#reader-close").click()
+                    assert page.evaluate(
+                        "getComputedStyle(document.querySelector('.feature-grid'))"
+                        ".gridTemplateColumns.split(' ').length === 1"
+                    ), "Feature grid should be a single column on a phone"
+                    page.get_by_role("button", name="Open navigation").click()
+                    expect(page.locator(".nav-item")).to_be_visible()
                     page.get_by_role("button", name="Delete upload.txt").click()
                     expect(page.locator("#document-count")).to_have_text("3")
                     expect(page.locator("#answer-section")).not_to_be_visible()
-                    page.set_viewport_size({"width": 390, "height": 844})
+                    page.keyboard.press("Escape")
+                    assert page.evaluate(
+                        "!document.body.classList.contains('nav-open')"
+                    ), "Escape should close the navigation drawer"
+                    for _ in range(50):
+                        if page.evaluate(
+                            "document.querySelector('.sidebar').getBoundingClientRect().right <= 1"
+                        ):
+                            break
+                        page.wait_for_timeout(20)
+                    else:
+                        raise AssertionError("Navigation drawer did not slide away")
                     page.screenshot(path=str(args.output / "mobile.png"), full_page=True)
                     assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), (
                         "Mobile layout overflows"
