@@ -134,9 +134,9 @@ def main():
                     expect(page.locator("#document-count")).to_have_text("3")
                     expect(page.locator("#answer-section")).not_to_be_visible()
                     page.keyboard.press("Escape")
-                    assert page.evaluate(
-                        "!document.body.classList.contains('nav-open')"
-                    ), "Escape should close the navigation drawer"
+                    assert page.evaluate("!document.body.classList.contains('nav-open')"), (
+                        "Escape should close the navigation drawer"
+                    )
                     for _ in range(50):
                         if page.evaluate(
                             "document.querySelector('.sidebar').getBoundingClientRect().right <= 1"
